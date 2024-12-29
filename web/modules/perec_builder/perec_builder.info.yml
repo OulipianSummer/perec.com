@@ -1,0 +1,5 @@
+name: 'Perec Builder'
+type: module
+description: 'Module for building basic constraint lists'
+package: Custom
+core_version_requirement: ^10 || ^11
