@@ -3,6 +3,7 @@ _core:
 module:
   announcements_feed: 0
   automated_cron: 0
+  ban: 0
   big_pipe: 0
   block: 0
   block_content: 0
@@ -12,11 +13,13 @@ module:
   config: 0
   config_split: 0
   contact: 0
+  content_moderation: 0
   contextual: 0
   datetime: 0
   dblog: 0
   dynamic_page_cache: 0
   editor: 0
+  entity_browser: 0
   entity_reference_revisions: 0
   entity_usage: 0
   field: 0
@@ -38,6 +41,7 @@ module:
   paragraphs_library: 0
   path: 0
   path_alias: 0
+  responsive_image: 0
   search: 0
   shortcut: 0
   system: 0
@@ -47,6 +51,7 @@ module:
   update: 0
   user: 0
   views_ui: 0
+  workflows: 0
   views: 10
   paragraphs: 11
   standard: 1000
