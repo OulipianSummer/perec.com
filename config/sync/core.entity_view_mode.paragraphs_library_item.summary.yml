@@ -1,0 +1,13 @@
+uuid: 7cf63535-b561-43aa-9e4e-4632a5ceb1f6
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs_library
+_core:
+  default_config_hash: _YqHTUZ5t7SWq5sE0bJwbSNH9CaL_KIbwu-rURJ6sXo
+id: paragraphs_library_item.summary
+label: Summary
+description: null
+targetEntityType: paragraphs_library_item
+cache: true
