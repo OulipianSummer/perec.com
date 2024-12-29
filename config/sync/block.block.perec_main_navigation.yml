@@ -1,0 +1,27 @@
+uuid: 2e8e05d0-0298-4979-a9da-dae2f63f5a85
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - perec
+_core:
+  default_config_hash: S2zW6PQyfyRvpqYrylJuwZSupJ3pNgscC9bRLGaoUuw
+id: perec_main_navigation
+theme: perec
+region: nav_main
+weight: 0
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: true
+visibility: {  }

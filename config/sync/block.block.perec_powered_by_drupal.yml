@@ -1,0 +1,22 @@
+uuid: cce1837a-cb5b-4967-a269-397d3e983720
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - perec
+_core:
+  default_config_hash: RcwpxHqssskyvaoZd6jWnCSN6F_F2EXgFShRCZvRcFs
+id: perec_powered_by_drupal
+theme: perec
+region: footer
+weight: 0
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  label_display: '0'
+  provider: system
+visibility: {  }
