@@ -1,0 +1,22 @@
+uuid: 00facc14-6731-45cf-a835-eef8dad6c5ea
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.tour.field_knight_s_tour
+  module:
+    - perec_builder
+    - perec_chessboard
+id: tour.tour.field_knight_s_tour
+field_name: field_knight_s_tour
+entity_type: tour
+bundle: tour
+label: "Knight's Tour"
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  size: '8'
+field_type: perec_chessboard_field_type

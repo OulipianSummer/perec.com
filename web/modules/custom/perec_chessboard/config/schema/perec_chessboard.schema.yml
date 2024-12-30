@@ -2,33 +2,33 @@ field.widget.settings.perec_chessboard_widget:
   type: mapping
   label: Chessboard widget settings
   mapping:
-    foo:
-      type: string
-      label: Foo
+    size:
+      type: int
+      label: Size
 
 field.formatter.settings.perec_chessboard_formatter:
   type: mapping
   label: Chessboard formatter settings
   mapping:
-    foo:
-      type: string
-      label: Foo
+    size:
+      type: int
+      label: Size
 
 field.storage_settings.perec_chessboard_field_type:
   type: mapping
   label: Chessboard storage settings
   mapping:
-    foo:
-      type: string
-      label: Foo
+    size:
+      type: int
+      label: Size
 
 field.field_settings.perec_chessboard_field_type:
   type: mapping
   label: Chessboard field settings
   mapping:
-    bar:
-      type: string
-      label: Bar
+    size:
+      type: int
+      label: Size
 
 field.value.perec_chessboard_field_type:
   type: mapping
@@ -37,3 +37,11 @@ field.value.perec_chessboard_field_type:
     value:
       type: label
       label: Value
+
+field.widget.settings.perec_chessboard_field_widget:
+  type: mapping
+  label: ChessboardFieldWidget widget settings
+  mapping:
+    foo:
+      type: string
+      label: Foo

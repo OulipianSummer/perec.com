@@ -1,0 +1,25 @@
+<?php
+
+
+function perec_chessboard_sizes () {
+  return [
+    '5' => 5,
+    '7' => 7,
+    '8' => 8,
+    '9' => 9,
+    '10' => 10
+  ];
+}
+
+function perec_chessboard_number_to_letter($number) {
+  // Ensure the number is a positive integer.
+  if ($number < 1) {
+    return ''; // Return an empty string for invalid numbers.
+  }
+
+  // Convert the number to a letter (1 => A, 2 => B, ..., 26 => Z).
+  // Use the ASCII value of 'A' (65) and add $number - 1.
+  $letter = chr(65 + ($number - 1) % 26);
+
+  return $letter;
+}

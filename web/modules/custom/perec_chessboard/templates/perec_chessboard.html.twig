@@ -1,0 +1,16 @@
+{% set alpha = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'] %}
+{% if size %}
+  <label for="{{ attributes.id }}"></label>
+  <table class="chessboard" data-id="cb-widget">
+    {% for rank in range(0, size - 1) %}
+      <tr class="cb-rank" data-rank="{{(size + 1) - (rank + 1)}}">
+        {% for file in range(0, size - 1) %}
+          <td class="cb-cell" data-cell="{{alpha[file]}}{{(size + 1 ) - (rank + 1)}}">
+          </td>
+        {% endfor %}
+      </tr>
+    {% endfor %}
+  </table>
+{% endif %}
+<input{{ attributes }} data-id="cb-input"/>
+{{ children }}

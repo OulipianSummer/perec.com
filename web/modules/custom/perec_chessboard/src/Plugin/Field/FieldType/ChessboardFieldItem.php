@@ -19,7 +19,7 @@ use Drupal\Core\TypedData\DataDefinition;
 #[FieldType(
   id: 'perec_chessboard_field_type',
   label: new TranslatableMarkup('Chessboard'),
-  description: new TranslatableMarkup('Some description'),
+  description: new TranslatableMarkup('Field to record chess moves and positions'),
   default_widget: 'perec_chessboard_widget',
   default_formatter: 'perec_chessboard_formatter',
 )]
@@ -28,29 +28,8 @@ final class ChessboardFieldItem extends FieldItemBase {
   /**
    * {@inheritdoc}
    */
-  public static function defaultStorageSettings(): array {
-    $settings = ['foo' => ''];
-    return $settings + parent::defaultStorageSettings();
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function storageSettingsForm(array &$form, FormStateInterface $form_state, $has_data): array {
-    $element['foo'] = [
-      '#type' => 'textfield',
-      '#title' => $this->t('Foo'),
-      '#default_value' => $this->getSetting('foo'),
-      '#disabled' => $has_data,
-    ];
-    return $element;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
   public static function defaultFieldSettings(): array {
-    $settings = ['bar' => ''];
+    $settings = ['size' => '8'];
     return $settings + parent::defaultFieldSettings();
   }
 
@@ -58,10 +37,11 @@ final class ChessboardFieldItem extends FieldItemBase {
    * {@inheritdoc}
    */
   public function fieldSettingsForm(array $form, FormStateInterface $form_state): array {
-    $element['bar'] = [
-      '#type' => 'textfield',
-      '#title' => $this->t('Bar'),
-      '#default_value' => $this->getSetting('bar'),
+    $element['size'] = [
+      '#type' => 'select',
+      '#options' => perec_chessboard_sizes(),
+      '#title' => $this->t('Size'),
+      '#default_value' => $this->getSetting('size'),
     ];
     return $element;
   }
@@ -85,7 +65,7 @@ final class ChessboardFieldItem extends FieldItemBase {
     // See /core/lib/Drupal/Core/TypedData/Plugin/DataType directory for
     // available data types.
     $properties['value'] = DataDefinition::create('string')
-      ->setLabel(t('Text value'))
+      ->setLabel(t('Chess notation value'))
       ->setRequired(TRUE);
 
     return $properties;
@@ -118,8 +98,8 @@ final class ChessboardFieldItem extends FieldItemBase {
       'value' => [
         'type' => 'varchar',
         'not null' => FALSE,
-        'description' => 'Column description.',
-        'length' => 255,
+        'description' => 'Move sequence',
+        'length' => 510,
       ],
     ];
 

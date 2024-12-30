@@ -16,7 +16,7 @@ use Drupal\Core\StringTranslation\TranslatableMarkup;
 #[FieldFormatter(
   id: 'perec_chessboard_formatter',
   label: new TranslatableMarkup('Chessboard'),
-  field_types: ['string'],
+  field_types: ['perec_chessboard_field_type'],
 )]
 final class PerecChessboardFormatter extends FormatterBase {
 
@@ -24,7 +24,7 @@ final class PerecChessboardFormatter extends FormatterBase {
    * {@inheritdoc}
    */
   public static function defaultSettings(): array {
-    $setting = ['foo' => 'bar'];
+    $setting = ['size' => '8'];
     return $setting + parent::defaultSettings();
   }
 
@@ -32,10 +32,11 @@ final class PerecChessboardFormatter extends FormatterBase {
    * {@inheritdoc}
    */
   public function settingsForm(array $form, FormStateInterface $form_state): array {
-    $elements['foo'] = [
-      '#type' => 'textfield',
-      '#title' => $this->t('Foo'),
-      '#default_value' => $this->getSetting('foo'),
+    $elements['size'] = [
+      '#type' => 'select',
+      '#options' => perec_chessboard_sizes(),
+      '#title' => $this->t('Size'),
+      '#default_value' => $this->getSetting('size'),
     ];
     return $elements;
   }
@@ -45,7 +46,7 @@ final class PerecChessboardFormatter extends FormatterBase {
    */
   public function settingsSummary(): array {
     return [
-      $this->t('Foo: @foo', ['@foo' => $this->getSetting('foo')]),
+      $this->t('Size: @size', ['@size' => $this->getSetting('size')]),
     ];
   }
 
