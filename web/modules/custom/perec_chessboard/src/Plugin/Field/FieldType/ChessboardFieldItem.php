@@ -14,10 +14,10 @@ use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\Core\TypedData\DataDefinition;
 
 /**
- * Defines the 'perec_chessboard' field type.
+ * Defines the 'perec_chessboard_field_type' field type.
  */
 #[FieldType(
-  id: 'perec_chessboard',
+  id: 'perec_chessboard_field_type',
   label: new TranslatableMarkup('Chessboard'),
   description: new TranslatableMarkup('Some description'),
   default_widget: 'perec_chessboard_widget',
