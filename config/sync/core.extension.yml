@@ -42,6 +42,7 @@ module:
   path: 0
   path_alias: 0
   perec_builder: 0
+  perec_chessboard: 0
   responsive_image: 0
   search: 0
   shortcut: 0
