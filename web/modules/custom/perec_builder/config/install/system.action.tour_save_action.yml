@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - perec_builder
+id: tour_save_action
+label: 'Save tours'
+type: tour
+plugin: entity:save_action:tour
+configuration: {  }

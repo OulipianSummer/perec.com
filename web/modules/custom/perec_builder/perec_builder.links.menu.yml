@@ -1,0 +1,11 @@
+entity.tour.settings:
+  title: 'Tour'
+  description: 'Configure a Tour entity type.'
+  route_name:  entity.tour.settings
+  parent: system.admin_structure
+
+entity.tour.collection:
+  title: 'Tours'
+  description: 'List of tours.'
+  route_name: entity.tour.collection
+  parent: system.admin_content

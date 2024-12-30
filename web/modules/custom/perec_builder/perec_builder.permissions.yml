@@ -1,0 +1,11 @@
+administer tour:
+  title: 'Administer tours'
+  restrict access: true
+view tour:
+  title: 'View tour'
+edit tour:
+  title: 'Edit tour'
+delete tour:
+  title: 'Delete tour'
+create tour:
+  title: 'Create tour'

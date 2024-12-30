@@ -1,0 +1,7 @@
+entity.tour.settings:
+  path: 'admin/structure/tour'
+  defaults:
+    _form: '\Drupal\perec_builder\Form\TourSettingsForm'
+    _title: 'Tour'
+  requirements:
+    _permission: 'administer tour'

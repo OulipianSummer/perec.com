@@ -1,0 +1,5 @@
+tour.add_form:
+  title: 'Add tour'
+  route_name: entity.tour.add_form
+  appears_on:
+    - entity.tour.collection

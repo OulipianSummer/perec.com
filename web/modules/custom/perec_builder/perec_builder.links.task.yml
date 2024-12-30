@@ -1,0 +1,22 @@
+entity.tour.settings:
+  title: 'Settings'
+  route_name: entity.tour.settings
+  base_route: entity.tour.settings
+entity.tour.view:
+  title: 'View'
+  route_name: entity.tour.canonical
+  base_route: entity.tour.canonical
+entity.tour.edit_form:
+  title: 'Edit'
+  route_name: entity.tour.edit_form
+  base_route: entity.tour.canonical
+entity.tour.delete_form:
+  title: 'Delete'
+  route_name: entity.tour.delete_form
+  base_route: entity.tour.canonical
+  weight: 10
+entity.tour.collection:
+  title: 'Tours'
+  route_name: entity.tour.collection
+  base_route: system.admin_content
+  weight: 10

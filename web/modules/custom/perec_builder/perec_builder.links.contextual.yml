@@ -1,0 +1,10 @@
+entity.tour.edit_form:
+  route_name: entity.tour.edit_form
+  group: tour
+  title: 'Edit'
+
+entity.tour.delete_form:
+  route_name: entity.tour.delete_form
+  group: tour
+  title: 'Delete'
+  weight: 10

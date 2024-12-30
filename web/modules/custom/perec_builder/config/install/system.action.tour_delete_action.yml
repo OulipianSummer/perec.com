@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - perec_builder
+id: tour_delete_action
+label: 'Delete tours'
+type: tour
+plugin: entity:delete_action:tour
+configuration: {  }
