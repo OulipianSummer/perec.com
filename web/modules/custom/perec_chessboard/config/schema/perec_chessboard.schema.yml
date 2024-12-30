@@ -1,4 +1,4 @@
-field.widget.settings.perec_chessboard:
+field.widget.settings.perec_chessboard_widget:
   type: mapping
   label: Chessboard widget settings
   mapping:
