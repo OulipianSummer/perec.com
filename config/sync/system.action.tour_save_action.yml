@@ -1,0 +1,13 @@
+uuid: bd133f8c-80c4-432e-b22c-b0ddc0bdf7f4
+langcode: en
+status: true
+dependencies:
+  module:
+    - perec_builder
+_core:
+  default_config_hash: 8BwHlmpFLxSKVvlt9IksVnrm0TihHAuNd2cvyGGJEW8
+id: tour_save_action
+label: 'Save tours'
+type: tour
+plugin: 'entity:save_action:tour'
+configuration: {  }
