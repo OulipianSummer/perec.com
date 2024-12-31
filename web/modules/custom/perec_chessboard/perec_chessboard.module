@@ -32,7 +32,6 @@ function perec_chessboard_form_alter(&$form, $form_state, $form_id){
       'wrapper' => 'edit-field-knight-s-tour-wrapper',
      ];
      $size = $form_state->getValue('field_tour_size');
-     $dpm($size);
    }
 }
 

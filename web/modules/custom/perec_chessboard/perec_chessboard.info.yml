@@ -3,6 +3,3 @@ type: module
 description: 'Creates a chessboard widget, field type, and field formatter'
 package: 'custom'
 core_version_requirement: ^10 || ^11
-dependencies:
-  - drupal:field
-  - drupal:theme
