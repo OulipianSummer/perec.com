@@ -4,12 +4,26 @@
   height: 5vw;
 }
 
+.perec-chessboard th {
+  padding: 0;
+  width: 5vw;
+  text-align: center;
+}
+
+.perec-chessboard thead {
+  width: unset;
+  display: block;
+}
+
 .perec-chessboard tbody {
-  width: 100%;
   display: block;
 }
 
 .perec-chessboard tr.odd td:nth-child(odd),
 .perec-chessboard tr.even td:nth-child(even) {
   background: black;
+}
+.perec-chessboard tr.odd td:nth-child(even),
+.perec-chessboard tr.even td:nth-child(odd) {
+  background: white;
 }

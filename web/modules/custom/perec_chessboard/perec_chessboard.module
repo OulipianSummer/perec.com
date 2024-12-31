@@ -25,23 +25,46 @@ function perec_chessboard_number_to_letter($number) {
 
 function perec_chessboard_form_alter(&$form, $form_state, $form_id){
 
-  if($form_id === "tour_add_form") {
+  if($form_id === "tour_add_form" || $form_id === 'tour_edit_form') {
      $form['field_tour_size']['widget']['#ajax'] = [
       'callback' => 'perec_chessboard_change_size_ajax_callback',
       'event'=> 'change',
-      'wrapper' => 'edit-field-knight-s-tour-wrapper',
+      'wrapper' => 'perec-chessboard-ajax-wrapper',
      ];
-     $size = $form['field_tour_size'];
-     var_dump($size);
+
+     $size = intval($form_state->getValue('field_tour_size'));
+      if(empty($size)){
+       $size = $form['field_tour_size']['widget']['#default_value'][0];
+      }
+
+      $form['#attached']['library'][] = 'perec_chessboard/perec_chessboard';
+
+      $form['field_knight_s_tour']['#prefix'] ='<div id="perec-chessboard-ajax-wrapper">';
+      $form['field_knight_s_tour']['#suffix'] ='</div>';
+
+      $form['field_knight_s_tour']['chessboard'] = [
+        '#type' => 'table',
+        '#header' => perec_chessboard_build_chessboard_header($size),
+        '#rows' => perec_chessboard_build_chessboard_rows($size),
+        '#attributes' => [
+          'class' => ['perec-chessboard']
+        ],
+        '#weight' => -10
+      ];
    }
 }
 
 function perec_chessboard_change_size_ajax_callback(&$form, $form_state){
+  $element = $form['field_knight_s_tour'];
+  $size = intval($form_state->getValue('field_tour_size')[0]['value']);
 
+  $element['chessboard']['#header'] = perec_chessboard_build_chessboard_header($size);
+  $element['chessboard']['#rows'] = perec_chessboard_build_chessboard_rows($size);
+  return $element;
 }
 
 
-function perec_chessboard_build_chessboard_rows($size) {
+function perec_chessboard_build_chessboard_rows(int $size) {
 
   $rows = [];
 
@@ -60,4 +83,14 @@ function perec_chessboard_build_chessboard_rows($size) {
   }
 
   return $rows;
+}
+
+function perec_chessboard_build_chessboard_header(int $size){
+  $header = [];
+
+  for($col = 0; $col < $size; $col++){
+    $header[] = perec_chessboard_number_to_letter($col + 1);
+  }
+
+  return $header;
 }

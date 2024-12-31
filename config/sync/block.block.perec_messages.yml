@@ -1,0 +1,22 @@
+uuid: c77ab403-86bf-43d3-b0ab-4f1a1eda1b8c
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - perec
+_core:
+  default_config_hash: MPfG90fYOZdMN6jybcTHcSVSc3y5OXgWSv1di3ARwM0
+id: perec_messages
+theme: perec
+region: content
+weight: -7
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: Messages
+  label_display: '0'
+  provider: system
+visibility: {  }

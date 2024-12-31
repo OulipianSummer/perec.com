@@ -1,0 +1,22 @@
+uuid: e5a0eef2-0039-48fb-8426-4072e4ad07eb
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - perec
+_core:
+  default_config_hash: rX0lKNdUUXsMBDe1UjNpwyLT_RW3JblXmVJdtmHAlb0
+id: perec_help
+theme: perec
+region: content
+weight: -3
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

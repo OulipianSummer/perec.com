@@ -1,0 +1,25 @@
+uuid: 976ed9a2-91ab-4705-8d8b-cb2f9ec6059c
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - perec
+_core:
+  default_config_hash: 48xSMlkYiUpYl5jbvXrtzMwIIUxaERJyxti-0YZMVag
+id: perec_branding
+theme: perec
+region: nav_branding
+weight: -6
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: false
+visibility: {  }
