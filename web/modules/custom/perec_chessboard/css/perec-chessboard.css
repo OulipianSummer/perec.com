@@ -2,6 +2,19 @@
   padding: 0;
   width: 5vw;
   height: 5vw;
+  position: relative;
+}
+
+.perec-chessboard td.visited:before {
+  content: '';
+  height: 5vw;
+  width: 5vw;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0,0,0, 0.4);
 }
 
 .perec-chessboard th {
@@ -21,7 +34,7 @@
 
 .perec-chessboard tr.odd td:nth-child(odd),
 .perec-chessboard tr.even td:nth-child(even) {
-  background: black;
+  background: blue;
 }
 .perec-chessboard tr.odd td:nth-child(even),
 .perec-chessboard tr.even td:nth-child(odd) {

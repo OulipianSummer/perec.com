@@ -32,6 +32,7 @@ function perec_chessboard_form_alter(&$form, $form_state, $form_id){
       'wrapper' => 'perec-chessboard-ajax-wrapper',
      ];
 
+     // TODO: This doesn't seem to get anything?
      $size = intval($form_state->getValue('field_tour_size'));
       if(empty($size)){
        $size = $form['field_tour_size']['widget']['#default_value'][0];
@@ -42,12 +43,14 @@ function perec_chessboard_form_alter(&$form, $form_state, $form_id){
       $form['field_knight_s_tour']['#prefix'] ='<div id="perec-chessboard-ajax-wrapper">';
       $form['field_knight_s_tour']['#suffix'] ='</div>';
 
+      $saved_sequence = strtoupper($form['field_knight_s_tour']['widget'][0]['value']['#default_value']);
+
       $form['field_knight_s_tour']['chessboard'] = [
         '#type' => 'table',
         '#header' => perec_chessboard_build_chessboard_header($size),
-        '#rows' => perec_chessboard_build_chessboard_rows($size),
+        '#rows' => perec_chessboard_build_chessboard_rows($size, $saved_sequence),
         '#attributes' => [
-          'class' => ['perec-chessboard']
+          'class' => ['perec-chessboard'],
         ],
         '#weight' => -10
       ];
@@ -64,9 +67,10 @@ function perec_chessboard_change_size_ajax_callback(&$form, $form_state){
 }
 
 
-function perec_chessboard_build_chessboard_rows(int $size) {
+function perec_chessboard_build_chessboard_rows(int $size, string $saved_sequence) {
 
   $rows = [];
+  $saved_sequence = explode(',', $saved_sequence);
 
   for ($row = 0; $row < $size; $row++) {
     $table_row = [];
@@ -74,8 +78,15 @@ function perec_chessboard_build_chessboard_rows(int $size) {
       $rank = perec_chessboard_number_to_letter($col + 1);
       $file = ($size + 1) - ($row + 1);
       $cell_id = $rank . $file;
+
+      $classes = ['cb__cell'];
+      if(in_array($cell_id, $saved_sequence)){
+        $classes[] = 'visited';
+      }
+
       $table_row[] = [
         'data-cell-id' => $cell_id,
+        'class' => $classes,
       ];
     }
 
