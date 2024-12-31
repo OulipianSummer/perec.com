@@ -1,4 +1,4 @@
-uuid: e9cfa6e9-54c7-46b9-ad93-e718a4960d30
+uuid: 96bfffdb-3625-4388-aa7a-c978f91f3554
 langcode: en
 status: true
 dependencies: {  }
@@ -7,7 +7,7 @@ _core:
 id: feedback
 label: 'Website feedback'
 recipients:
-  - admin@perec.com
+  - abmurrow@posteo.com
 reply: ''
 weight: 0
 message: 'Your message has been sent.'

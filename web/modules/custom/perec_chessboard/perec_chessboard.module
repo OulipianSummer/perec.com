@@ -14,12 +14,50 @@ function perec_chessboard_sizes () {
 function perec_chessboard_number_to_letter($number) {
   // Ensure the number is a positive integer.
   if ($number < 1) {
-    return ''; // Return an empty string for invalid numbers.
+    return '';
   }
 
-  // Convert the number to a letter (1 => A, 2 => B, ..., 26 => Z).
-  // Use the ASCII value of 'A' (65) and add $number - 1.
   $letter = chr(65 + ($number - 1) % 26);
 
   return $letter;
+}
+
+
+function perec_chessboard_form_alter(&$form, $form_state, $form_id){
+
+  if($form_id === "tour_add_form") {
+     $form['field_tour_size']['widget']['#ajax'] = [
+      'callback' => 'perec_chessboard_change_size_ajax_callback',
+      'event'=> 'change',
+      'wrapper' => 'edit-field-knight-s-tour-wrapper',
+     ];
+     $size = $form_state->getValue('field_tour_size');
+     $dpm($size);
+   }
+}
+
+function perec_chessboard_change_size_ajax_callback(&$form, $form_state){
+
+}
+
+
+function perec_chessboard_build_chessboard_rows($size) {
+
+  $rows = [];
+
+  for ($row = 0; $row < $size; $row++) {
+    $table_row = [];
+    for ($col = 0; $col < $size; $col++) {
+      $rank = perec_chessboard_number_to_letter($col + 1);
+      $file = ($size + 1) - ($row + 1);
+      $cell_id = $rank . $file;
+      $table_row[] = [
+        'data-cell-id' => $cell_id,
+      ];
+    }
+
+    $rows[] = $table_row;
+  }
+
+  return $rows;
 }

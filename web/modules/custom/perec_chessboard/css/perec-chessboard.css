@@ -1,0 +1,15 @@
+.perec-chessboard td {
+  padding: 0;
+  width: 5vw;
+  height: 5vw;
+}
+
+.perec-chessboard tbody {
+  width: 100%;
+  display: block;
+}
+
+.perec-chessboard tr.odd td:nth-child(odd),
+.perec-chessboard tr.even td:nth-child(even) {
+  background: black;
+}

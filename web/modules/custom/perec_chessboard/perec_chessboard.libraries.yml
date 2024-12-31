@@ -1,0 +1,8 @@
+perec_chessboard:
+  js:
+    js/perec-chessboard.js: {}
+  dependencies:
+    - core/jquery
+  css:
+    theme:
+      css/perec-chessboard.css: {}
