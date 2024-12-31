@@ -1,0 +1,20 @@
+uuid: 4e7aa0b0-d8cc-45ae-9a74-89fc1fbe3c67
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.tour.field_knight_s_tour
+  module:
+    - perec_builder
+id: tour.tour.field_knight_s_tour
+field_name: field_knight_s_tour
+entity_type: tour
+bundle: tour
+label: "Knight's Tour"
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

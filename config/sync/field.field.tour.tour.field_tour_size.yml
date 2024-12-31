@@ -1,0 +1,23 @@
+uuid: 085e3a81-3d6d-40de-b549-18b5362b2608
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.tour.field_tour_size
+  module:
+    - options
+    - perec_builder
+id: tour.tour.field_tour_size
+field_name: field_tour_size
+entity_type: tour
+bundle: tour
+label: Size
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 8
+default_value_callback: ''
+settings: {  }
+field_type: list_integer
