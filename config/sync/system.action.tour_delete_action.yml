@@ -1,0 +1,13 @@
+uuid: 8c3ed8ea-d423-4a48-987d-97d0b8c8bbd4
+langcode: en
+status: true
+dependencies:
+  module:
+    - perec_builder
+_core:
+  default_config_hash: MnZkJJRag6L4TrMYbv2SzqfDkRBYwpO6yXqWusCA9xM
+id: tour_delete_action
+label: 'Delete tours'
+type: tour
+plugin: 'entity:delete_action:tour'
+configuration: {  }
